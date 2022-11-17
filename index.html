@@ -13,18 +13,31 @@
     <!--timer on upper left corner-->
     <div class="timer">
         <span id="timer">Time: </span>
-        <div class="timer-count">60</div>
+        <div class="timer-count"></div>
     </div>
 
     <!--Quiz main content at beginning-->
-    <div class="quiz-block">
-        <h1>Coding Quiz Challenge</h1>
+    <div class="quiz-block start-screen">
+        <h1>Web Dev Quizerator</h1>
         
-        <p id="questions-card">Test your knowledge of Web Development topics!</p>
-        <ol id="answers"></ol>
+        <p>Test your knowledge of Web Development topics!</p>
+        
         <button id="start-button">Start Quiz</button>
-        <button id="next"></button>
+        
     </div>
-    <script src="./assets/script.js"></script>
+    <div class="quiz-screen hide">
+        <p class="question-text"></p>
+        <ol id="answers">
+            
+        </ol>
+        <button id="next" class="next"></button>
+        <p id="correct"></p>
+        <p id="wrong"></p>
+    </div>
+    <div class="end-screen hide">
+        <h3>your score: <span></span></h3>
+        <!--put input with title and button to submit results-->
+    </div>
 </body>
+<script src="./assets/script1.js"></script>
 </html>
