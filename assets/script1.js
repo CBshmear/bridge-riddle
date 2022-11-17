@@ -120,18 +120,37 @@ nextButton.innerHTML = "Next Question"
  var answerFour = questionBank[questionIndex].answers[3];
  
  
- console.log(li);
+ 
  
  li.innerHTML = answerOne;
  liTwo.innerHTML = answerTwo;
  liThree.innerHTML = answerThree;
  liFour.innerHTML = answerFour;
 
+li.setAttribute("data", "data-index: 0")
+liTwo.setAttribute("data", "data-index: 1")
+liThree.setAttribute("data", "data-index: 2")
+liFour.setAttribute("data", "data-index: 3")
+
+li.addEventListener("click",checkCorrect);
+liTwo.addEventListener("click",checkCorrect);
+liThree.addEventListener("click",checkCorrect);
+liFour.addEventListener("click",checkCorrect);
+
+
  answerEl.appendChild(li);
  answerEl.appendChild(liTwo);
  answerEl.appendChild(liThree);
  answerEl.appendChild(liFour);
-
+ 
+ function checkCorrect() {
+   ind = Event.target.data-index;
+ if (questionBank[questionIndex].answers[ind] === questionBank[questionIndex].correct) {
+  window.alert("correct!");
+ }else{
+  time - 10;
+ }
+ }
   // Create elements (h3, ul, whatever)
   // ...
   // <li data-index="0">
@@ -149,6 +168,7 @@ nextButton.innerHTML = "Next Question"
   // if correct, yay
   // if incorrect, time - X
 }
+
 function nextQuestion () {
   questionEl.innerHTML = "";
   answerEl.innerHTML = "";
